@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PerúTurisnet | Turismo en el Perú</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark sticky-top border-bottom">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-geo-alt-fill amarillo"></i>
+            PerúTurisnet
+        </a>
+
+        <button class="btn btn-outline-warning"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menu">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+
+    </div>
+</nav>
+
+
+<!-- MENÚ -->
+<div class="offcanvas offcanvas-end text-bg-dark" id="menu">
+
+    <div class="offcanvas-header">
+        <h5 class="amarillo">
+            <i class="bi bi-compass"></i> MENÚ
+        </h5>
+
+        <button class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+        <a href="#inicio" class="nav-link text-white p-3">
+            <i class="bi bi-house amarillo"></i> Inicio
+        </a>
+
+        <a href="#destinos" class="nav-link text-white p-3">
+            <i class="bi bi-map amarillo"></i> Destinos
+        </a>
+
+        <a href="#galeria" class="nav-link text-white p-3">
+            <i class="bi bi-images amarillo"></i> Galería
+        </a>
+
+        <a href="#contacto" class="nav-link text-white p-3">
+            <i class="bi bi-envelope amarillo"></i> Contacto
+        </a>
+
+    </div>
+</div>
+
+
+<main class="container py-4">
+<!-- HERO -->
+<section id="inicio"
+         class="hero d-flex align-items-center p-4 p-md-5 mb-5">
+
+    <div class="col-lg-8">
+
+        <small class="badge bg-warning text-dark mb-3">
+            TURISMO EN EL PERÚ
+        </small>
+
+        <h1>
+            Descubre los mejores
+            <span>destinos</span>
+            del Perú
+        </h1>
+
+        <p class="lead text-light">
+            Explora la riqueza milenaria, paisajes andinos, la selva y las hermosas costas para planificar tu próximo viaje.
+        </p>
+
+        <a href="#destinos" class="btn btn-warning px-4">
+            Explorar destinos
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- BUSCADOR DE DESTINOS -->
+<section class="card p-4 p-md-5 mb-5">
+
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">
+            Encuentra tu <span class="amarillo">destino</span>
+        </h2>
+
+        <p class="text-secondary">
+            Selecciona tus preferencias para encontrar un lugar turístico en el Perú.
+        </p>
+    </div>
+
+    <div class="row g-3">
+
+        <div class="col-md-4">
+            <label class="form-label">Región / Departamento</label>
+
+            <select id="pais" class="form-select">
+                <option value="">Seleccionar región</option>
+                <option value="cusco">Cusco</option>
+                <option value="lima">Lima</option>
+                <option value="ica">Ica</option>
+                <option value="puno">Puno</option>
+                <option value="ancash">Áncash</option>
+                <option value="arequipa">Arequipa</option>
+                <option value="amazonas">Amazonas</option>
+                <option value="la-libertad">La Libertad</option>
+            </select>
+        </div>
+
+
+        <div class="col-md-4">
+            <label class="form-label">Ciudad / Provincia</label>
+
+            <select id="ciudad" class="form-select" disabled>
+                <option value="">Seleccionar ciudad</option>
+            </select>
+        </div>
+
+
+        <div class="col-md-4">
+            <label class="form-label">Atracción</label>
+
+            <select id="atraccion" class="form-select" disabled>
+                <option value="">Seleccionar lugar</option>
+            </select>
+        </div>
+
+        <div class="col-12 mt-4">
+            <button id="buscar" class="btn btn-warning w-100 py-2 fw-bold">
+                <i class="bi bi-search me-2"></i>
+                Buscar destino
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- RESULTADO -->
+    <div id="resultado" class="mt-4"></div>
+
+</section>
+
+<!-- DESTINOS -->
+<section id="destinos" class="mb-5">
+
+    <div class="text-center mb-4">
+
+        <small class="amarillo fw-bold">
+            DESTINOS DESTACADOS
+        </small>
+
+        <h2 class="fw-bold mt-2">
+            Explora el <span class="amarillo">Perú</span>
+        </h2>
+
+        <p class="text-secondary">
+            Conoce los 8 lugares turísticos más importantes y representativos de nuestro territorio.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- 1. Machu Picchu -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="Machu Picchu" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Cusco, Perú</small>
+                        <h3 class="fw-bold mt-2">Machu Picchu</h3>
+                        <p class="text-secondary">La impresionante ciudadela inca declarada maravilla del mundo moderno.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Líneas de Nasca -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.dURyuHQn4X4i-tfr_CDwSQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top" alt="Líneas de Nasca" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Ica, Perú</small>
+                        <h3 class="fw-bold mt-2">Líneas de Nasca</h3>
+                        <p class="text-secondary">Misteriosos geoglifos milenarios trazados sobre las pampas áridas del desierto.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Lago Titicaca -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://th.bing.com/th/id/R.fff9afb0a69c1709620f8632fc510862?rik=t0YMAA8gW%2fVyQA&pid=ImgRaw&r=0" class="card-img-top" alt="Lago Titicaca" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Puno, Perú</small>
+                        <h3 class="fw-bold mt-2">Lago Titicaca</h3>
+                        <p class="text-secondary">El lago navegable más alto del mundo y hogar de las islas flotantes de los Uros.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Cañón del Colca -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.xGCfe4YBmAgz9puxWHPc2AHaEG?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top" alt="Cañón del Colca" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Arequipa, Perú</small>
+                        <h3 class="fw-bold mt-2">Cañón del Colca</h3>
+                        <p class="text-secondary">Uno de los cañones más profundos del mundo y excelente mirador del majestuoso cóndor.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Huacachina -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://th.bing.com/th/id/R.2f0c972e813fb6d659db56434429064f?rik=borMVV0Upz%2bcIg&pid=ImgRaw&r=0" class="card-img-top" alt="Oasis de Huacachina" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Ica, Perú</small>
+                        <h3 class="fw-bold mt-2">Oasis de Huacachina</h3>
+                        <p class="text-secondary">Un oasis natural rodeado de imponentes dunas de arena ideal para la aventura.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Nevado Huascarán -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://www.peru.travel/Contenido/General/Imagen/es/1025/1.1/huascaran-home.jpg" class="card-img-top" alt="Nevado Huascarán" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Áncash, Perú</small>
+                        <h3 class="fw-bold mt-2">Nevado Huascarán</h3>
+                        <p class="text-secondary">Cumbre más alta del Perú, flanqueada por lagunas turquesas y la Cordillera Blanca.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Fortaleza de Kuélap -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://blog.viajesmachupicchu.travel/wp-content/uploads/2023/05/Kuelap.jpg" class="card-img-top" alt="Fortaleza de Kuélap" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Amazonas, Perú</small>
+                        <h3 class="fw-bold mt-2">Fortaleza de Kuélap</h3>
+                        <p class="text-secondary">Imponente arquitectura preincaica de piedra construida por la cultura Chachapoyas.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Centro Histórico de Lima -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="https://th.bing.com/th/id/R.de4069c323eb079805768b9d9fa1365e?rik=Qr2oHR0blSs0dA&riu=http%3a%2f%2fcatedraunesco.usmp.edu.pe%2fwp-content%2fuploads%2f2018%2f08%2f8-lima.jpg&ehk=ngsRv6nv1cUc9QicwIYYzLuMp6kSqXfeEaXqOEg%2f1Ow%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Lima" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <small class="amarillo"><i class="bi bi-geo-alt"></i> Lima, Perú</small>
+                        <h3 class="fw-bold mt-2">Centro Histórico de Lima</h3>
+                        <p class="text-secondary">Arquitectura colonial, iglesias históricas y la capital gastronómica de Sudamérica.</p>
+                    </div>
+                    <button class="btn btn-outline-warning w-100 mt-3">Ver destino</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALERÍA -->
+<section id="galeria" class="mb-5">
+
+    <div class="text-center mb-4">
+
+        <small class="amarillo fw-bold">
+            GALERÍA
+        </small>
+
+        <h2 class="fw-bold">
+            Maravillas del Perú
+        </h2>
+
+    </div>
+
+
+    <div id="galeriaCarousel"
+         class="carousel slide carousel-fade"
+         data-bs-ride="carousel">
+
+        <div class="carousel-inner rounded-4">
+
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=80"
+                     class="d-block w-100"
+                     alt="Machu Picchu">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.pNLZ0uSFeEBh_Ihd9Ne5ngHaE8?r=0&w=1800&h=1200&rs=1&pid=ImgDetMain&o=7&rm=3"
+                     class="d-block w-100"
+                     alt="Nevado Huascarán">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.entornoturistico.com/wp-content/uploads/2018/03/lago-titicaca.jpg"
+                     class="d-block w-100"
+                     alt="Lago Titicaca">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev"
+                data-bs-target="#galeriaCarousel"
+                data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+        <button class="carousel-control-next"
+                data-bs-target="#galeriaCarousel"
+                data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- DESTINO DESTACADO -->
+<section class="card mb-5 overflow-hidden">
+
+    <div class="row g-0">
+
+        <div class="col-lg-6">
+
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80"
+                 class="w-100 h-100"
+                 style="min-height:400px;object-fit:cover;"
+                 alt="Machu Picchu">
+
+        </div>
+
+        <div class="col-lg-6 p-4 p-md-5">
+
+            <span class="badge bg-warning text-dark">
+                DESTINO DESTACADO
+            </span>
+
+            <h2 class="fw-bold mt-3">
+                Machu Picchu:
+                <span class="amarillo">
+                    la ciudadela inca
+                </span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Machu Picchu es uno de los lugares turísticos más representativos del Perú. Su arquitectura, historia y ubicación entre las montañas lo convierten en un destino único a nivel mundial.
+            </p>
+
+            <ul class="text-secondary">
+
+                <li class="mb-2">
+                    Patrimonio de la Humanidad
+                </li>
+
+                <li class="mb-2">
+                    Ubicado en Cusco
+                </li>
+
+                <li class="mb-2">
+                    Turismo cultural, místico y de aventura
+                </li>
+
+            </ul>
+
+            <a href="https://www.google.com/maps/search/Machu+Picchu"
+               target="_blank"
+               class="btn btn-warning">
+
+                <i class="bi bi-geo-alt"></i>
+                Ver ubicación
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="contacto p-4 p-md-5 mb-5">
+
+    <div class="text-center mb-4">
+
+        <small class="amarillo fw-bold">
+            CONTACTO
+        </small>
+
+        <h2 class="fw-bold">
+            Planifica tu próximo <span class="amarillo">viaje</span>
+        </h2>
+
+        <p class="text-secondary">
+            Déjanos tus datos y cuéntanos qué destino peruano te gustaría conocer.
+        </p>
+
+    </div>
+
+
+    <form id="formularioContacto" novalidate>
+
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" class="form-control"
+                   placeholder="Tu nombre" minlength="3" maxlength="60"
+                   pattern="^[A-Za-zÀ-ÿ\u00f1\u00d1\s]+$" required>
+            <div class="invalid-feedback">
+                Ingresa tu nombre completo (mínimo 3 letras, sin números).
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" class="form-control"
+                   placeholder="correo@ejemplo.com" required>
+            <div class="invalid-feedback">
+                Ingresa un correo electrónico válido (ej. correo@ejemplo.com).
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="paisContacto" class="form-label">País de Procedencia</label>
+
+            <select id="paisContacto" name="pais" class="form-select" required>
+                <option value="">Seleccionar</option>
+                <option>Perú</option>
+                <option>Otro país (Extranjero)</option>
+            </select>
+            <div class="invalid-feedback">
+                Selecciona tu procedencia.
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="tipoViaje" class="form-label">Tipo de viaje</label>
+
+            <select id="tipoViaje" name="tipoViaje" class="form-select" required>
+                <option value="">Seleccionar</option>
+                <option>Aventura</option>
+                <option>Playas</option>
+                <option>Cultura e Historia</option>
+                <option>Naturaleza y Selva</option>
+                <option>Familiar</option>
+            </select>
+            <div class="invalid-feedback">
+                Selecciona el tipo de viaje.
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label for="mensaje" class="form-label">Mensaje</label>
+
+            <textarea id="mensaje" name="mensaje" class="form-control"
+                      rows="5" minlength="10" maxlength="500"
+                      placeholder="Escribe tu mensaje..."
+                      required></textarea>
+            <div class="invalid-feedback">
+                Escribe un mensaje de al menos 10 caracteres.
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit"
+                    class="btn btn-warning w-100 py-3 fw-bold">
+
+                <i class="bi bi-send me-2"></i>
+                Enviar mensaje
+
+            </button>
+        </div>
+
+    </div>
+
+</form>
+
+</section>
+
+
+<!-- MODAL DE CONFIRMACIÓN -->
+<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExitoLabel">
+                    <i class="bi bi-check-circle-fill amarillo me-2"></i>
+                    ¡Mensaje enviado con éxito!
+                </h5>
+                <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="text-secondary mb-0">
+                    Gracias por contactarnos. Nos pondremos en contacto contigo a la brevedad para ayudarte a planificar tu próxima aventura por el Perú.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning fw-bold" data-bs-dismiss="modal">
+                    Entendido
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="border-top py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-lg-5">
+
+                <h4 class="marca fw-bold">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    PerúTurisnet
+                </h4>
+
+                <p class="text-secondary">
+                    Plataforma dedicada a descubrir y difundir los mejores destinos turísticos del Perú.
+                </p>
+
+                <div>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <h5>Destinos</h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="#destinos">Machu Picchu</a>
+                    </li>
+
+                    <li>
+                        <a href="#destinos">Líneas de Nasca</a>
+                    </li>
+
+                    <li>
+                        <a href="#destinos">Lago Titicaca</a>
+                    </li>
+
+                    <li>
+                        <a href="#destinos">Cañón del Colca</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <h5>Contacto</h5>
+
+                <p class="text-secondary mb-2">
+                    <i class="bi bi-envelope amarillo"></i>
+                    soporte@peruturisnet.com
+                </p>
+
+                <p class="text-secondary mb-2">
+                    <i class="bi bi-telephone amarillo"></i>
+                    +51 999 999 999
+                </p>
+
+                <p class="text-secondary">
+                    <i class="bi bi-geo-alt amarillo"></i>
+                    Lima, Perú
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr class="border-secondary">
+
+
+        <p class="text-center text-secondary mb-0">
+            © 2026 PerúTurisnet · Todos los derechos reservados
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
