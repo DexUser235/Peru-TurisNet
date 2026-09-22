@@ -1,5 +1,5 @@
 /* =========================================================
-   LATANTURISNET - Lógica del sitio (Actualizada para Perú)
+   PERUTURISNET - Lógica del sitio
    ========================================================= */
 
 const destinos = {
@@ -236,14 +236,14 @@ if (pais && ciudad && atraccion && resultado) {
         const destino = destinos[pais.value].ciudades[ciudad.value].atracciones[atraccion.value];
 
         resultado.innerHTML = `
-            <div class="card border-warning p-4">
+            <div class="resultado-card">
                 <div class="d-flex align-items-center gap-3">
-                    <div>
-                        <i class="bi bi-geo-alt-fill fs-1 amarillo"></i>
+                    <div class="resultado-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
                     </div>
                     <div>
                         <small class="amarillo fw-bold">
-                            DESTINO ENCONTRADO
+                            Destino encontrado
                         </small>
                         <h3 class="fw-bold mb-1">
                             ${destino.nombre}
